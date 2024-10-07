@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 18:41:10 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/02 11:54:27 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/07 19:57:23 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define PUSH_SWAP_H
 
 //╔═════════════════════ Library ═══════════════════╗
-# include "libft/libft.h"
+# include "../src/libft/libft.h"
 # include <stdbool.h>
 # include <limits.h>
 //╚═════════════════════════════════════════════════╝
@@ -42,12 +42,15 @@ typedef struct s_stack_node
 //
 //
 //╔══════════════════ push_swap.c ══════════════════╗
+void	init_stack_a(t_stack_node **stack_a, char **nbr, int stack_size);
 
 //╚═════════════════════════════════════════════════╝
 //
 //
 //
 //╔═══════════════ push_swap_utils.c ═══════════════╗
+t_stack_node	*lstnew(char *nbr);
+int		ft_stack_size(char **nbr);
 
 //╚═════════════════════════════════════════════════╝
 //

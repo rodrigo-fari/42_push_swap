@@ -7,18 +7,28 @@ CC = cc
 FLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
-# Paths
-LIBFT_DIR = libft/
+# Folders
+SRC_DIR = src/
+HEADER_DIR = header/
+LIBFT_DIR = $(SRC_DIR)libft/
+MOVES_DIR = $(SRC_DIR)moves/
+PUSH_SWAP_DIR = $(SRC_DIR)push_swap/
 
 # Source files
-SRC = push_swap.c push_swap_utils.c
+SRC = $(PUSH_SWAP_DIR)push_swap.c \
+		$(SRC_DIR)push_swap_utils.c \
+		$(MOVES_DIR)moves.c
+
 OBJ = $(SRC:.c=.o)
 
 # Libraries
 LIBFT_A = $(LIBFT_DIR)libft.a
 
+# Include paths
+INCLUDES = -I $(HEADER_DIR)
+
 # Default target
-all: $(MLX_PATH) $(NAME)
+all: $(NAME)
 	@clear
 	@echo "╔══════════════════════════╗"
 	@echo "║ ✅ Compiled Successfully!║"
@@ -34,7 +44,7 @@ $(LIBFT_A):
 
 # Compiling object files
 %.o: %.c
-	$(CC) $(FLAGS) -c $< $(MLX_INCLUDE)
+	$(CC) $(FLAGS) -c $< -o $@ $(INCLUDES)
 
 # Cleaning object files
 clean:
@@ -55,4 +65,4 @@ re: fclean all
 
 # Leak testing
 leak: re
-	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) "10 11 12 13 14 15"
