@@ -12,12 +12,12 @@ SRC_DIR = src/
 HEADER_DIR = header/
 LIBFT_DIR = $(SRC_DIR)libft/
 MOVES_DIR = $(SRC_DIR)movements/
-UTILS_DIR = $(SRC_DIR)push_swap_utils/
 PUSH_SWAP_DIR = $(SRC_DIR)push_swap/
+UTILS_DIR = $(SRC_DIR)push_swap_utils/
 
 # Source files
 SRC = $(PUSH_SWAP_DIR)push_swap.c \
-		$(PUSH_SWAP_DIR)push_swap_utils.c \
+		$(UTILS_DIR)push_swap_utils.c \
 		$(MOVES_DIR)moves.c
 
 OBJ = $(SRC:.c=.o)
