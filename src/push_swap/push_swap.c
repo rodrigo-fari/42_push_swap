@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 10:34:15 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/07 19:31:24 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/10 10:15:47 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int main (int argc, char **argv)
 	return (0);
 }
 
-//criar uma funcao que descobre o numero de nodes
-//alocar memoria suficiente na stack para os nodes
-//inserir node a node dentro da stack malocados
-//testa colocar numeros dentro da stack
+//criar e iniciar "a" stack "b"
+//passar valores da stack "a" para a "b"
+//devolver valores da stack "b" para a "a"
+//criar funcoes de movimentacao de stack
