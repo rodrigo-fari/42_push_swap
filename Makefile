@@ -15,10 +15,12 @@ MOVES_DIR = $(SRC_DIR)movements/
 PUSH_SWAP_DIR = $(SRC_DIR)push_swap/
 UTILS_DIR = $(SRC_DIR)push_swap_utils/
 
+
 # Source files
 SRC = $(PUSH_SWAP_DIR)push_swap.c \
 		$(UTILS_DIR)push_swap_utils.c \
-		$(MOVES_DIR)moves.c
+		$(MOVES_DIR)moves.c \
+		$(PUSH_SWAP_DIR)main.c \
 
 OBJ = $(SRC:.c=.o)
 

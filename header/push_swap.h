@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 18:41:10 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/07 19:57:23 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:27:53 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ typedef struct s_stack_node
 //
 //
 //╔══════════════════ push_swap.c ══════════════════╗
-void	init_stack_a(t_stack_node **stack_a, char **nbr, int stack_size);
+void	init_stack_a(char **nbr, t_stack_node **stack_a);
+void	init_stack_b(t_stack_node **stack_b);
 
 //╚═════════════════════════════════════════════════╝
 //
@@ -50,7 +51,10 @@ void	init_stack_a(t_stack_node **stack_a, char **nbr, int stack_size);
 //
 //╔═══════════════ push_swap_utils.c ═══════════════╗
 t_stack_node	*lstnew(char *nbr);
-int		ft_stack_size(char **nbr);
+int				ft_stack_size(char **nbr);
+void	ensure_unique(char **nbr);
+void	error(char *str);
+void	error(char *str);
 
 //╚═════════════════════════════════════════════════╝
 //
