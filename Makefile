@@ -19,6 +19,7 @@ UTILS_DIR = $(SRC_DIR)push_swap_utils/
 # Source files
 SRC = $(PUSH_SWAP_DIR)push_swap.c \
 		$(UTILS_DIR)push_swap_utils.c \
+		$(UTILS_DIR)push_swap_parsing.c \
 		$(MOVES_DIR)moves.c \
 		$(PUSH_SWAP_DIR)main.c \
 

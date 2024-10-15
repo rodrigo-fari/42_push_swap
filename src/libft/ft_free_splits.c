@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_free_splits.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 10:31:10 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/15 18:17:45 by rde-fari         ###   ########.fr       */
+/*   Created: 2024/10/15 17:52:52 by rde-fari          #+#    #+#             */
+/*   Updated: 2024/10/15 17:55:47 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "libft.h"
 
-int main (int argc, char **argv)
+int	ft_free_splits(char **line)
 {
-	t_stack_node	*st_a;
+	int	i;
 
-	st_a = NULL;
-	if (argc == 1)
+	i = 0;
+	if (!line)
 		return (0);
-	if (argc > 2)
-		parse_data(array_to_string(argv), st_a);
-	if (argc == 2)
-		parse_data(argv[1], st_a);
-	clear_all(st_a);
+	while (line[i])
+		free(line[i++]);
+	free(line);
 	return (0);
 }
-
-// Memory Leak @ *lstnew. make leak to check
-//needs do finish it.

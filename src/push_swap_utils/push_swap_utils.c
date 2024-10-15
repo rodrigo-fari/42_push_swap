@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:26:55 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/10 13:42:49 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/15 18:05:40 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,40 @@ t_stack_node	*lstnew(char *nbr)
 	return (nnode);
 }
 
-void	ensure_unique(char **nbr)
+void	error(char *str, t_stack_node *st_a)
 {
-	int		i;
-	int		j;
-
-	i = 0;
-	while (nbr[i])
-	{
-		if (ft_atol(nbr[i]) != ft_atoi(nbr[i]))
-			error("Input number above max int!");
-		j = i + 1;
-		while (nbr[j])
-		{
-			if (ft_atoi(nbr[i]) == ft_atoi(nbr[j]))
-				error("Duplicated number found!");
-			j++;
-		}
-		i++;
-	}
+	ft_putendl_fd("\033[31mError.\033[0m", 2);
+	ft_putendl_fd(str, 2);
+	if (st_a)
+		clear_all(st_a);
+	exit (1);
 }
 
-void	error(char *str)
+char	*array_to_string(char **str)
 {
-	ft_printf("Error. %s\n", str);
-	exit (1);
+	int		i;
+	char	*new_str;
+
+	new_str = ft_strdup("");
+	i = 1;
+	while (str[i])
+	{
+		new_str = ft_strjoin(new_str, (const char *)str[i]);
+		new_str = ft_strjoin(new_str, " ");
+		i++;
+	}
+	return (new_str);
+}
+
+void	clear_all(t_stack_node *st_a)
+{
+	t_stack_node *temp;
+
+	while (st_a)
+	{
+		temp = st_a->next;
+		free (st_a);
+		st_a = temp;
+		free (temp);
+	}
 }

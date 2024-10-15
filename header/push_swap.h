@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 18:41:10 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/10 13:27:53 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/15 18:10:02 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@
 # include "../src/libft/libft.h"
 # include <stdbool.h>
 # include <limits.h>
+//╚═════════════════════════════════════════════════╝
+//
+//
+//
+//╔═════════════════════ Colors ═══════════════════╗
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define ORANGE "\033[38;5;208m"
+#define PURPLE "\e[35m"
+#define YELLOW "\033[33m"
+#define CYAN "\033[36m"
+#define RESET "\033[0m"
 //╚═════════════════════════════════════════════════╝
 //
 //
@@ -50,16 +62,23 @@ void	init_stack_b(t_stack_node **stack_b);
 //
 //
 //╔═══════════════ push_swap_utils.c ═══════════════╗
-t_stack_node	*lstnew(char *nbr);
 int				ft_stack_size(char **nbr);
-void	ensure_unique(char **nbr);
-void	error(char *str);
-void	error(char *str);
+char	*array_to_string(char **str);
+t_stack_node	*lstnew(char *nbr);
+void	error(char *str, t_stack_node *st_a);
+void	clear_all(t_stack_node *st_a);
+
 
 //╚═════════════════════════════════════════════════╝
 //
 //
 //
+//╔═════════════ push_swap_parsing.c ═══════════════╗
+void	parse_data(char *str, t_stack_node *st_a);
+void	ensure_unique(char **nbr);
+void	check_alpha(char *str);
+
+//╚═════════════════════════════════════════════════╝
 //╔════════════════════ End if ═════════════════════╗
 #endif
 //╚═════════════════════════════════════════════════╝

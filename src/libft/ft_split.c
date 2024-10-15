@@ -6,69 +6,87 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 20:41:26 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/05/01 20:41:59 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/15 17:49:12 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	cw(const char	*str, char c)
+static void	free_pointers(char **sup, int count)
 {
-	size_t	i;
-	size_t	cw;
+	int	i;
 
 	i = 0;
-	cw = 0;
-	while (str[i])
-	{
-		while (str[i] == c)
-			i++;
-		if (str[i])
-			cw++;
-		while (str[i] && str[i] != c)
-			i++;
-	}
-	return (cw);
+	while (i < count)
+		free(sup[i++]);
+	free(sup);
 }
 
-char	**splitter(char const *s, char c, char **result)
+static int	count_words(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	limit;
-	size_t	start;
+	int	i;
+	int	flag;
 
-	j = 0;
+	flag = 1;
 	i = 0;
-	limit = 0;
+	while (*s)
+	{
+		if (*s == c && flag == 0)
+		{
+			flag = 1;
+		}
+		else if (*s != c && flag == 1)
+		{
+			i++;
+			flag = 0;
+		}
+		s++;
+	}
+	return (i);
+}
+
+static void	ft_allocate(char **sup, char const *s, char c)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	i = 0;
+	j = 0;
+	k = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
-		start = i;
-		if (s[i] == '\0')
+		k = i;
+		if (s[k] == '\0')
 			break ;
-		while (s[i] != c && s[i])
-		{
+		while (s[i] != c && s[i] != '\0')
 			i++;
-			limit++;
-		}
-		result[j++] = ft_substr(s, start, limit);
-		limit = 0;
+		sup[j] = ft_substr(s, k, i - k);
+		j++;
 	}
-	result[j] = NULL;
-	return (result);
+	sup[j] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
+	char	**split;
+	int		i;
 
-	if (!s)
+	i = 0;
+	split = ft_calloc(count_words(s, c) + 1, sizeof(char *));
+	if (!split)
 		return (NULL);
-	result = ft_calloc(sizeof(char *), (cw(s, c) + 1));
-	if (!result)
-		return (NULL);
-	result = splitter(s, c, result);
-	return (result);
+	ft_allocate(split, s, c);
+	while (i < count_words(s, c))
+	{
+		if (split[i] == NULL)
+		{
+			free_pointers(split, count_words(s, c));
+			return (NULL);
+		}
+		i++;
+	}
+	return (split);
 }

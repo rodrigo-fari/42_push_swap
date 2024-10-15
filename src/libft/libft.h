@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 20:41:20 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/10 12:44:15 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/15 17:55:26 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_free_splits(char **line);
 int		ft_atoi(const char *nptr);
 int		ft_strnlen(char *str, int c);
 int		ft_strcmp(char *s1, char *s2);
