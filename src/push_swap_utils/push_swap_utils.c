@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:26:55 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/15 18:05:40 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:39:09 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@ int	ft_stack_size(char **nbr)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (nbr[i])
 		i++;
 	return (i);
 }
 
-t_stack_node	*lstnew(char *nbr)
+t_stack_node	*lstnew(int nbr)
 {
 	t_stack_node	*nnode;
 
-	nnode = malloc(sizeof(t_stack_node));
+	nnode = ft_calloc(1, sizeof(t_stack_node));
 	if (!nnode)
 		return (NULL);
-	nnode->nbr = ft_atoi(nbr);
+	nnode->nbr = nbr;
 	nnode->next = NULL;
 	return (nnode);
 }
@@ -63,11 +63,11 @@ void	clear_all(t_stack_node *st_a)
 {
 	t_stack_node *temp;
 
-	while (st_a)
+	temp = st_a;
+	while (temp)
 	{
 		temp = st_a->next;
 		free (st_a);
 		st_a = temp;
-		free (temp);
 	}
 }

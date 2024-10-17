@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 18:41:10 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/15 18:10:02 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:40:22 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,19 @@ typedef struct s_stack_node
 //
 //
 //╔══════════════════ push_swap.c ══════════════════╗
-void	init_stack_a(char **nbr, t_stack_node **stack_a);
-void	init_stack_b(t_stack_node **stack_b);
+t_stack_node	*find_last_node(t_stack_node *st_a);
+void			stack_fill(t_stack_node **st_a, char **nbr);
+void			init_stack_a(char *nbr, t_stack_node **stack_a);
+
 
 //╚═════════════════════════════════════════════════╝
 //
 //
 //
 //╔═══════════════ push_swap_utils.c ═══════════════╗
-int				ft_stack_size(char **nbr);
+int		ft_stack_size(char **nbr);
 char	*array_to_string(char **str);
-t_stack_node	*lstnew(char *nbr);
+t_stack_node	*lstnew(int nbr);
 void	error(char *str, t_stack_node *st_a);
 void	clear_all(t_stack_node *st_a);
 
@@ -74,7 +76,7 @@ void	clear_all(t_stack_node *st_a);
 //
 //
 //╔═════════════ push_swap_parsing.c ═══════════════╗
-void	parse_data(char *str, t_stack_node *st_a);
+void	parse_data(char *str, t_stack_node **st_a);
 void	ensure_unique(char **nbr);
 void	check_alpha(char *str);
 

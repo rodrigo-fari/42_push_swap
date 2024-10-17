@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:31:10 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/15 18:17:45 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:41:06 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,9 @@ int main (int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	if (argc > 2)
-		parse_data(array_to_string(argv), st_a);
+		parse_data(array_to_string(argv), &st_a);
 	if (argc == 2)
-		parse_data(argv[1], st_a);
+		parse_data(argv[1], &st_a);
 	clear_all(st_a);
 	return (0);
 }
-
-// Memory Leak @ *lstnew. make leak to check
-//needs do finish it.

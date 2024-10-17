@@ -6,20 +6,20 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:19:28 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/15 17:56:21 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:40:41 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	parse_data(char *str, t_stack_node *st_a)
+void	parse_data(char *str, t_stack_node **st_a)
 {
 	char	**nbr;
 
 	check_alpha(str);
 	nbr = ft_split(str, ' ');
 	ensure_unique(nbr);
-	init_stack_a(nbr, &st_a);
+	stack_fill(st_a, nbr);
 	ft_free_splits(nbr);
 }
 

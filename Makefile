@@ -69,4 +69,4 @@ re: fclean all
 
 # Leak testing
 leak: re
-	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) "10 11 12 13 14 15"
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) "10 11 12 13"
