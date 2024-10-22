@@ -6,13 +6,13 @@
 /*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:31:10 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/22 16:12:28 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:44:58 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
-int main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack_node	*st_a;
 

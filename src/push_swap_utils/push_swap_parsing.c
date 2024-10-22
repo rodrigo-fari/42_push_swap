@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:19:28 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/22 15:23:21 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:43:16 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	ensure_unique(char **nbr)
 		i++;
 	}
 }
+
 void	check_alpha(char *str)
 {
 	int	i;
@@ -63,7 +64,8 @@ void	check_alpha(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if ((!(ft_isdigit(str[i])) && str[i] != '-' && str[i] != '+' && str[i] != ' '))
+		if ((!(ft_isdigit(str[i])) && str[i] != '-'
+				&& str[i] != '+' && str[i] != ' '))
 			error("Alphanumerical character found!", NULL);
 		i++;
 	}

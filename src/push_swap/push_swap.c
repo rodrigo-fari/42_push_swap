@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 10:34:15 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/22 16:09:48 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:44:43 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	init_stack_a(char *nbr, t_stack_node **st_a)
 	t_stack_node	*node;
 	t_stack_node	*last_node;
 	int				number;
-	
+
 	number = ft_atoi(nbr);
 	node = lstnew(number);
 	if (!(*st_a))
@@ -33,20 +33,20 @@ void	init_stack_a(char *nbr, t_stack_node **st_a)
 	}
 }
 
-t_stack_node *find_last_node(t_stack_node *st_a)
+t_stack_node	*find_last_node(t_stack_node *st_a)
 {
 	t_stack_node	*last_node;
 
-	while(st_a->next)
+	while (st_a->next)
 		st_a = st_a->next;
 	last_node = st_a;
 	return (last_node);
 }
 
-void stack_fill(t_stack_node **st_a, char **nbr)
+void	stack_fill(t_stack_node **st_a, char **nbr)
 {
 	int	i;
-	int size;
+	int	size;
 
 	size = ft_stack_size(nbr);
 	i = 0;

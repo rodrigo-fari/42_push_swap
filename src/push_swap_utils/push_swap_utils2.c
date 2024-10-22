@@ -6,13 +6,13 @@
 /*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:06:39 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/22 16:12:12 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/22 17:49:06 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int stack_sorted(t_stack_node **st_a)
+int	stack_sorted(t_stack_node **st_a)
 {
 	int				verify;
 	int				i;
@@ -31,3 +31,4 @@ int stack_sorted(t_stack_node **st_a)
 	}
 	return (0);
 }
+

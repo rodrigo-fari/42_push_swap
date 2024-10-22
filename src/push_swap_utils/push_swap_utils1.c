@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:26:55 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/22 15:44:14 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:43:44 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	*array_to_string(char **str)
 
 void	clear_all(t_stack_node *st_a)
 {
-	t_stack_node *temp;
+	t_stack_node	*temp;
 
 	temp = st_a;
 	while (temp)
