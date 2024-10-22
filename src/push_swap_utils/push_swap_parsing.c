@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_parsing.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
+/*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:19:28 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/17 14:40:41 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/22 15:23:21 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	check_alpha(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (ft_isdigit(str[i]) == 0 && str[i] != ' ')
+		if ((!(ft_isdigit(str[i])) && str[i] != '-' && str[i] != '+' && str[i] != ' '))
 			error("Alphanumerical character found!", NULL);
 		i++;
 	}

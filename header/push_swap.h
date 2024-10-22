@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
+/*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 18:41:10 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/17 14:40:22 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:10:59 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@
 //╔═════════════════════ Structs ═══════════════════╗
 typedef struct s_stack_node
 {
-	int						nbr; 			//Numero atribuido 
-	int						index;			//Index da posicao na lista
-	int						push_cost;		//Custo da operacao
-	struct	s_stack_node	*target_node;	//Target da "A" para a "B"
-	struct	s_stack_node	*next;			//Proximo node da lista 
-	struct	s_stack_node	*prev;			//Node anterior da lista
+	int						nbr;
+	int						index;
+	int						push_cost;
+	int						stack_size;
+	struct	s_stack_node	*target_node;
+	struct	s_stack_node	*next;
+	struct	s_stack_node	*prev;
 }	t_stack_node;
 //╚═════════════════════════════════════════════════╝
 //
@@ -63,18 +64,22 @@ void			init_stack_a(char *nbr, t_stack_node **stack_a);
 //
 //
 //
-//╔═══════════════ push_swap_utils.c ═══════════════╗
-int		ft_stack_size(char **nbr);
-char	*array_to_string(char **str);
+//╔═══════════════ push_swap_utils1.c ═══════════════╗
+int				ft_stack_size(char **nbr);
+char			*array_to_string(char **str);
 t_stack_node	*lstnew(int nbr);
-void	error(char *str, t_stack_node *st_a);
-void	clear_all(t_stack_node *st_a);
+void			error(char *str, t_stack_node *st_a);
+void			clear_all(t_stack_node *st_a);
 
 
 //╚═════════════════════════════════════════════════╝
 //
 //
 //
+//╔═══════════════ push_swap_utils2.c ═══════════════╗
+int				stack_sorted(t_stack_node **st_a);
+
+//╚═════════════════════════════════════════════════╝
 //╔═════════════ push_swap_parsing.c ═══════════════╗
 void	parse_data(char *str, t_stack_node **st_a);
 void	ensure_unique(char **nbr);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
+/*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 10:34:15 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/17 14:35:09 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:09:48 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,5 @@ void stack_fill(t_stack_node **st_a, char **nbr)
 		init_stack_a(nbr[i], st_a);
 		i++;
 	}
+	(*st_a)->stack_size = size;
 }

@@ -1,0 +1,10 @@
+Programa nao reconhece "-1". O char "-" consta como alfabetico no parcing do programa.(✅ - Resolvido).
+
+Verificar se o programa funciona com "int_min" e "int_max" sem dar overflow.(✅ - Resolvido).
+
+verificar se o programa funciona com "./push_swap "10 11 12" 13 14 15 "16 17 18".
+(✅ - Resolvido).
+
+Criacao de movimentos e inicializacao da "stack b"
+
+

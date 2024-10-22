@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 10:31:10 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/10/22 16:12:28 by rde-fari         ###   ########.fr       */
+/*   Created: 2024/10/22 14:06:39 by rde-fari          #+#    #+#             */
+/*   Updated: 2024/10/22 16:12:12 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
-int main (int argc, char **argv)
+int stack_sorted(t_stack_node **st_a)
 {
-	t_stack_node	*st_a;
+	int				verify;
+	int				i;
+	t_stack_node	*node;
 
-	st_a = NULL;
-	if (argc == 1)
-		return (0);
-	if (argc != 2)
-		parse_data(array_to_string(argv), &st_a);
-	if (argc == 2)
-		parse_data(argv[1], &st_a);
-	stack_sorted(&st_a);
-	clear_all(st_a);
+	node = *st_a;
+	verify = (*st_a)->nbr;
+	i = 1;
+	while (node->next && i <= (*st_a)->stack_size)
+	{
+		node = node->next;
+		if (node->nbr < verify)
+			return (1);
+		verify = node->nbr;
+		i++;
+	}
 	return (0);
 }

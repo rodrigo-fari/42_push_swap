@@ -18,7 +18,8 @@ UTILS_DIR = $(SRC_DIR)push_swap_utils/
 
 # Source files
 SRC = $(PUSH_SWAP_DIR)push_swap.c \
-		$(UTILS_DIR)push_swap_utils.c \
+		$(UTILS_DIR)push_swap_utils1.c \
+		$(UTILS_DIR)push_swap_utils2.c \
 		$(UTILS_DIR)push_swap_parsing.c \
 		$(MOVES_DIR)moves.c \
 		$(PUSH_SWAP_DIR)main.c \
@@ -69,4 +70,4 @@ re: fclean all
 
 # Leak testing
 leak: re
-	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) "10 11 12 13"
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) "10 11 12"
